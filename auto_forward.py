@@ -109,5 +109,9 @@ async def handle_message(event):
     print("✅ Message forwarded")
 
 
-client.start()
-client.run_until_disconnected()
+async def main():
+    print("🚀 Bot Connected Successfully")
+    await client.run_until_disconnected()
+
+with client:
+    client.loop.run_until_complete(main())
